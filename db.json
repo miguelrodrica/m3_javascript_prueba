@@ -1,3 +1,25 @@
 {
-    "users": []
+  "users": [
+    {
+      "id": "1",
+      "name": "Miguel Rodriguez",
+      "email": "admin@gmail.com",
+      "password": "1234",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "name": "Robinson Cortes",
+      "email": "robin@gmail.com",
+      "password": "1234",
+      "role": "user"
+    },
+    {
+      "id": "dca9",
+      "name": "Pedrito Perez",
+      "email": "pedrito@gmail.com",
+      "password": "1234",
+      "role": "user"
+    }
+  ]
 }
