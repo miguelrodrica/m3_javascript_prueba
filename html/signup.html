@@ -4,8 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up | CRUDTASK</title>
+    <!--Link Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
-<body>
-    <h1>Soy el Sign Up</h1>
+<body class="bg-body-light">
+    <main class="container">
+        <div class="row" style="height: 5rem">
+            <div class="col d-flex justify-content-center align-items-center">
+                <i class="bi bi-clipboard2-check-fill" style="font-size: 2rem"></i>
+                <h1 class="card-title fw-bold">CRUDTASK</h1>
+            </div>
+        </div>
+        <section class="row">
+            <div class="col d-flex justify-content-center align-items-center">
+                <div class="card shadow p-3 bg-white" style="width: 20rem;">
+                    <div class="card-header bg-white text-center my-1">
+                        <h2 class="card-title fw-bold">Create account</h2>
+                        <p class="card-text mt-1 mb-3">Join the academic performance platform today</p>
+                    </div>
+                    <div class="card-body my-2">
+                        <form id="loginForm">
+                            <label for="nameInputSignup" class="card-text">Full Name</label>
+                            <input id="nameInputSignup" class="form-control mt-1 mb-3" type="text" placeholder="John Doe" required>
+                            <label for="emailInputSignup" class="card-text">Email address</label>
+                            <input id="emailInputSignup" class="form-control mt-1 mb-3" type="email" placeholder="student@university.edu" required>
+                            <label for="passwordInputSignup" class="card-text">Password</label>
+                            <input id="passwordInputSignup" class="form-control mt-1 mb-3" type="password" placeholder="Create a password" required>
+                            <label for="confirmPasswordInputSignup" class="card-text"> Confirm Password</label>
+                            <input id="confirmPasswordInputSignup" class="form-control mt-1 mb-3" type="password" placeholder="Confirm password" required>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary mt-1 w-100" id="btnLogin">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer bg-white text-center my-2">
+                        <p class="card-text mt-2">
+                            Already have an account?
+                            <a href="./login.html">Login</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--Link JavaScript-->
+    <script src="../js/signup.js" type="module"></script>
 </body>
 </html>

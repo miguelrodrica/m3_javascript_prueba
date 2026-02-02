@@ -4,8 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | CRUDTASK</title>
+    <!--Link Bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 </head>
-<body>
-    <h1>Soy el Login</h1>
+<body class="bg-body-light">
+    <main class="container">
+        <div class="row" style="height: 5rem">
+            <div class="col d-flex justify-content-center align-items-center">
+                <i class="bi bi-clipboard2-check-fill" style="font-size: 2rem"></i>
+                <h1 class="card-title fw-bold">CRUDTASK</h1>
+            </div>
+        </div>
+        <section class="row">
+            <div class="col d-flex justify-content-center align-items-center">
+                <div class="card shadow p-3 bg-white" style="width: 20rem;">
+                    <div class="card-header bg-white text-center my-1">
+                        <h2 class="card-title fw-bold">Welcome back</h2>
+                        <p class="card-text mt-1 mb-3">Enter your credentials to access the platform</p>
+                    </div>
+                    <div class="card-body my-2">
+                        <form id="loginForm">
+                            <label for="emailuserInputLogin" class="card-text">Email or username</label>
+                            <input id="emailuserInputLogin" class="form-control mt-1 mb-3" type="text" placeholder="student@university.edu" required>
+                            <label for="passwordInputLogin" class="card-text">Password</label>
+                            <input id="passwordInputLogin" class="form-control mt-1 mb-3" type="password" placeholder="**********" required>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary mt-1 w-100" id="btnLogin">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer bg-white text-center my-2">
+                        <p class="card-text mt-2">
+                            Don't have an account?
+                            <a href="./signup.html">Register</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--Link JavaScript-->
+    <script src="../js/login.js" type="module"></script>
 </body>
 </html>
