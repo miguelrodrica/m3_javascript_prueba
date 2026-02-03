@@ -57,7 +57,7 @@
     {
       "id": "3",
       "userId": "3",
-      "title": "Leer libro sobre Física",
+      "title": "Libro",
       "category": "physics",
       "priority": "medium",
       "status": "pending",
@@ -67,7 +67,7 @@
     {
       "id": "4",
       "userId": "2",
-      "title": "Página web",
+      "title": "Desarrollar Página web",
       "category": "research",
       "priority": "high",
       "status": "inprogress",
