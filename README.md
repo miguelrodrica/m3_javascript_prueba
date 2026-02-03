@@ -30,6 +30,7 @@ Aplicacion web sencilla con:
 3. Abrir el login.html en el navegador usando Live Server.
 
 ## Estructura del proyecto
+```
 m3_javascript_prueba/
 ├── html/
 │   ├── admin.html
