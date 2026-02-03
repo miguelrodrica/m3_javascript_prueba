@@ -7,7 +7,7 @@ const statusTask = document.querySelector('#taskStatus');
 const dueDateTask = document.querySelector('#taskDueDate');
 const descriptionTask = document.querySelector('#taskDescription');
 const btnSaveTask = document.querySelector('#btnSaveTask');
-const tasksList = document.querySelector('#tasksList');
+const tasksContainer = document.querySelector('#tasksContainer');
 // Variable de control para saber si estoy editando o creando una tarea
 let editingTaskId = null;
 
@@ -25,10 +25,19 @@ form.addEventListener('submit', async (event) => {
     getTasks();
 });
 
+showNameUser()
+function showNameUser() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    const box = document.querySelector('#userNameBox');
+
+    box.innerHTML = `<p class="card-text fs-4 fw-bold">${user.name}</p>`;
+};
+
 // Create Task - POST
 async function createTask() {
     const response = await fetch('http://localhost:3000/tasks');
     const tasks = await response.json();
+    const user = JSON.parse(localStorage.getItem('user'));
     let idExists = false;
 
     for (let task of tasks) {
@@ -45,6 +54,7 @@ async function createTask() {
 
     const newTask = {
         id: idTask.value,
+        userId: user.id,
         title: titleTask.value,
         category: categoryTask.value,
         priority: priorityTask.value,
@@ -66,30 +76,38 @@ async function createTask() {
 
 // Traer las tareas guardas para mostrarlas - GET
 async function getTasks() {
-    const response = await fetch('http://localhost:3000/tasks');
+    const response = await fetch("http://localhost:3000/tasks");
     const tasks = await response.json();
-
-    tasksList.innerHTML = '';
+    const user = JSON.parse(localStorage.getItem('user'));
+    
+    tasksContainer.innerHTML = ''; 
 
     for (let task of tasks) {
-        tasksList.innerHTML += `
-            <tr>
-                <td>${task.id}</td>
-                <td>${task.title}</td>
-                <td>${task.category}</td>
-                <td>${task.priority}</td>
-                <td>${task.status}</td>
-                <td>${task.duedate}</td>
-                <td>${task.description}</td>
-                <td>
-                    <button class="btn btn-warning btn-sm" onclick="loadTask('${task.id}')">
-                        Edit
-                    </button>
-                    <button class="btn btn-danger btn-sm" onclick="deleteTask('${task.id}')">
-                        Delete
-                    </button>
-                </td>
-            </tr>
+        if (task.userId === user.id)
+        tasksContainer.innerHTML += `
+            <div class="col-md-3">
+                <div class="card my-3 h-100">
+                    <div class="card-header text-center">
+                        <h5 class="card-title ">Task Title: <b>${task.title}</b></h5>
+                        <h6 class="card-subtitle text-secondary">ID: ${task.id}</h6>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Category: ${task.category}</p>
+                        <p class="card-text">Priority: ${task.priority}</p>
+                        <p class="card-text">Status: ${task.status}</p>
+                        <p class="card-text">Description: ${task.description}</p>
+                        <p class="card-text">Due Date: ${task.duedate}</p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <button class="btn btn-warning btn-sm" onclick="loadTask('${task.id}')">
+                            Edit
+                        </button>
+                        <button class="btn btn-danger btn-sm" onclick="deleteTask('${task.id}')">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
         `;
     };
 };
@@ -115,8 +133,11 @@ async function loadTask(id) {
 
 // UPDATE - PUT
 async function updateTask() {
+    const user = JSON.parse(localStorage.getItem('user'));
+
     const updatedTask = {
         id: idTask.value,
+        userId: user.id,
         title: titleTask.value,
         category: categoryTask.value,
         priority: priorityTask.value,

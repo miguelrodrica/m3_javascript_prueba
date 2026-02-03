@@ -32,7 +32,8 @@ form.addEventListener('submit', async (event) => {
         name: nameUser.value,
         email: emailUser.value,
         password: passwordUser.value,
-        role: "user"
+        role: "user",
+        userInfo: []
     };
 
     await fetch('http://localhost:3000/users', {

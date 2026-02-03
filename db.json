@@ -5,41 +5,74 @@
       "name": "Miguel Rodriguez",
       "email": "admin@gmail.com",
       "password": "1234",
-      "role": "admin"
+      "role": "admin",
+      "userInfo": []
     },
     {
       "id": "2",
       "name": "Robinson Cortes",
       "email": "robin@gmail.com",
       "password": "1234",
-      "role": "user"
+      "role": "user",
+      "userInfo": []
     },
     {
       "id": "dca9",
       "name": "Pedrito Perez",
       "email": "pedrito@gmail.com",
       "password": "1234",
-      "role": "user"
+      "role": "user",
+      "userInfo": []
+    },
+    {
+      "id": "a5ea",
+      "name": "Sara Velez",
+      "email": "sara@gmail.com",
+      "password": "1234",
+      "role": "user",
+      "userInfo": []
     }
   ],
   "tasks": [
     {
       "id": "1",
-      "title": "Math week 1 exam",
+      "userId": "2",
+      "title": "Examen matemáticas",
       "category": "math",
       "priority": "high",
-      "status": "pending",
+      "status": "inprogress",
       "duedate": "2026-02-15",
-      "description": "Study for the math exam"
+      "description": "Estudiar para el examen de matemáticas."
     },
     {
       "id": "2",
+      "userId": "2",
       "title": "Exposición Lógica",
       "category": "math",
       "priority": "low",
       "status": "pending",
       "duedate": "2026-02-20",
       "description": "Preparar la exposición de lógica para la clase de Robin."
+    },
+    {
+      "id": "3",
+      "userId": "3",
+      "title": "Leer libro sobre Física",
+      "category": "physics",
+      "priority": "medium",
+      "status": "pending",
+      "duedate": "2026-02-20",
+      "description": "Leer todo el libro sobre física llamado El Universo."
+    },
+    {
+      "id": "4",
+      "userId": "2",
+      "title": "Página web",
+      "category": "research",
+      "priority": "high",
+      "status": "inprogress",
+      "duedate": "2026-03-01",
+      "description": "Crear una página web para publicar los descubrimientos de la investigación."
     }
   ]
 }
